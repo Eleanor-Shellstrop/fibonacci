@@ -12,15 +12,19 @@
         <p>A common interview question</p>
     </header>
 
-    <form>
+    <form id="form">
         <fieldset>
             <legend>Enter a number to calculate that index value in the Fibonacci sequence</legend>
             <label for="array">Array Calculation</label>
                 <input type="number" id="array_input">
-                <button id="array_button">Calculate</button>
+                <button type="button" id="array_button">Calculate</button>
             <label for="recursive">Recursive Calculation</label>
                 <input type="number" id="recursive_input">
-                <button id="recursive_button">Calculate</button>
+                <button type="button" id="recursive_button">Calculate</button>
+        </fieldset>
+        <fieldset>
+            <legend>Index result:</legend>
+            <div id="result"></div>
         </fieldset>
     </form>
     <div class="container">
