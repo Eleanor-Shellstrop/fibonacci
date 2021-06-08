@@ -2,6 +2,17 @@
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+header {
+    background-image: url(./img/shell.png);
+    background-color: maroon;
+    background-blend-mode: difference;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color: white;
+    text-shadow: 1px 2px 3px black;
+}
+
 .container {
     width: 80%; 
     display: flex;
@@ -9,12 +20,12 @@
     flex-direction: column;
     justify-content: center;
     padding-left: 3%;
-    background-color: rgb(247, 216, 221);
 }
 
 #form {
     margin: 10% auto;
-    padding: 0 2%;
+    padding: 2%;
+    background-color: seashell;
 }
 
 fieldset {
@@ -30,4 +41,38 @@ label {
 legend {
     padding: 15px;
     border: 2px dotted lightgrey;
+    line-height: 1.5;
+}
+
+#result_div {
+    background-color: snow;
+}
+
+#fib_list{
+    background-color: rgb(29, 137, 131);
+    color: white;
+}
+
+li {
+    margin: 0 0 5px 0;
+}
+
+li::marker {
+    color: lightgrey;
+}
+
+
+/* MEDIA QUERIES */
+
+@media(min-width: 768px) {
+    header {
+        font-size: 1.5em;
+    }
+}
+
+@media(min-width: 1200px) {
+    #form {
+        width: 80%;
+        margin: 5% auto;
+    }
 }

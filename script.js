@@ -3,7 +3,7 @@
 //  -----------------------------------------------------------------------------
 // For Array Variation
 let fibArray = [];
-let fibDiv = [];
+
 
 function fibonacciArray (numberInput, array) {
     if (numberInput > 25) {
@@ -41,8 +41,6 @@ function recursiveFibonacci (x) {
 //  -----------------------------------------------------------------------------
 // Input calculations
 
-const recursiveInput = document.getElementById('recursive_input').value;
-const recursiveIndex = parseInt(recursiveInput);
 const arrayButton = document.getElementById('array_button');
 const recursiveButton = document.getElementById('recursive_button');
 const resultDiv = document.getElementById('result');
@@ -51,8 +49,12 @@ const form = document.getElementById('form');
 arrayButton.addEventListener('click', () => {
     const arrayInput = document.getElementById('array_input').value - 1;
     const arrayIndex = parseInt(arrayInput);
+
     fibonacciArray(arrayIndex, fibArray);
-    result.innerHTML = fibArray.pop();
+    
+    const indexStartOne = (arrayInput + 1);
+    result.innerHTML = indexStartOne + ".   " + fibArray.pop();
+
     form.reset();
 });
 
@@ -60,7 +62,9 @@ arrayButton.addEventListener('click', () => {
 recursiveButton.addEventListener('click', () => {
     const recursiveInput = document.getElementById('recursive_input').value -1;
     const recursiveIndex = parseInt(recursiveInput);
-    result.innerHTML = recursiveFibonacci(recursiveIndex);
+
+    result.innerHTML = (recursiveInput + 1) + ".   " + recursiveFibonacci(recursiveIndex);
+    
     form.reset();
 });
 
@@ -68,6 +72,9 @@ recursiveButton.addEventListener('click', () => {
 
 //  -----------------------------------------------------------------------------
 // Fill Div with Sequence
+
+let fibDiv = [];
+
 function fillFibonacciDiv () {
     fibonacciArray(24, fibDiv);
     for (let i = 0; i < fibDiv.length; i++) {
