@@ -1,0 +1,33 @@
+* {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.container {
+    width: 80%; 
+    display: flex;
+    margin: 0 auto;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 3%;
+    background-color: rgb(247, 216, 221);
+}
+
+#form {
+    margin: 10% auto;
+    padding: 0 2%;
+}
+
+fieldset {
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+input, 
+label {
+    margin: 10px;;
+}
+
+legend {
+    padding: 15px;
+    border: 2px dotted lightgrey;
+}
