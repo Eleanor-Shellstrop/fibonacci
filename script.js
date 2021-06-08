@@ -1,5 +1,6 @@
-// Pattern: F(n) = F(n-1) + F(n-2)
+//* Pattern: F(n) = F(n-1) + F(n-2)
 
+//  -----------------------------------------------------------------------------
 // For Array Variation
 let fibArray = [];
 let fibDiv = [];
@@ -22,10 +23,13 @@ function populateFibArray (number, array) {
     }
 }
 
+//  -----------------------------------------------------------------------------
 // For Recursive Method
 function recursiveFibonacci (x) {
     if (x <= 1) {
         return 1;
+    } else if (x > 100) {
+        alert("Number too large, enter number less than 100");
     } else {
         return recursiveFibonacci(x - 1) + recursiveFibonacci(x -2);
     }
@@ -33,6 +37,7 @@ function recursiveFibonacci (x) {
 
 console.log(recursiveFibonacci(5));
 
+//  -----------------------------------------------------------------------------
 // Fill Div with Sequence
 function fillFibonacciDiv () {
     populateFibArray(25, fibDiv);
