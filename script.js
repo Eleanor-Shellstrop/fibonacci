@@ -5,20 +5,19 @@
 let fibArray = [];
 let fibDiv = [];
 
-function populateFibArray (number, array) {
-    for (let i = 0; i < number; i++) {
-        let firstNum = 0;
-        let secondNum = 1;
+function fibonacciArray (numberInput, array) {
+    for (let i = 0; i < numberInput; i++) {
+        let firstNum = 1;
+        let secondNum = 0;
         let numberToPush;
 
-        while(number > 0) {
-            numberToPush = firstNum + secondNum;
-            array.push(numberToPush);
-
-            firstNum = secondNum;
+        while(numberInput >= 0) {
+            numberToPush = firstNum;
+            firstNum = firstNum + secondNum;
             secondNum = numberToPush;
 
-            number -= 1;
+            numberInput -= 1;
+            array.push(secondNum);
         }
     }
 }
@@ -35,12 +34,35 @@ function recursiveFibonacci (x) {
     }
 }
 
-console.log(recursiveFibonacci(5));
+
+//  -----------------------------------------------------------------------------
+// Input calculations
+
+const recursiveInput = document.getElementById("recursive_input").value;
+const recursiveIndex = parseInt(recursiveInput);
+const arrayButton = document.getElementById('array_button');
+const recursiveButton = document.getElementById('recursive_button');
+
+arrayButton.addEventListener('click', () => {
+    const arrayInput = document.getElementById("array_input").value - 1;
+    const arrayIndex = parseInt(arrayInput);
+    fibonacciArray(arrayIndex, fibArray);
+    console.log(fibArray.pop());
+});
+
+
+recursiveButton.addEventListener('click', () => {
+    const recursiveInput = document.getElementById("recursive_input").value -1;
+    const recursiveIndex = parseInt(recursiveInput);
+    console.log(recursiveFibonacci(recursiveIndex));
+});
+
+
 
 //  -----------------------------------------------------------------------------
 // Fill Div with Sequence
 function fillFibonacciDiv () {
-    populateFibArray(25, fibDiv);
+    fibonacciArray(25, fibDiv);
     for (let i = 0; i < fibDiv.length; i++) {
        let li = document.createElement('li');
        li.innerText = fibDiv[i];
